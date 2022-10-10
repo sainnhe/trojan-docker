@@ -1,7 +1,6 @@
 FROM nginx:mainline
 ARG domain="demo_domain.com"
 
-RUN sed -i s@/deb.debian.org/@/mirrors.aliyun.com/@g /etc/apt/sources.list
 RUN apt-get clean && \
     apt-get update -y && \
     apt-get install -y procps build-essential libpq-dev nodejs
@@ -15,4 +14,3 @@ RUN mkdir -p /etc/nginx/cert/ && \
 RUN echo "alias ll='ls -alF'" >> /root/.bashrc
 EXPOSE 80 8443
 WORKDIR /etc/nginx/
-
