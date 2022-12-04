@@ -17,7 +17,7 @@ services:
     networks: 
       vpn:
         ipv4_address: 172.168.22.2
-    restart: on-failure
+    restart: always
 
   trojan:
     hostname: TROJAN
@@ -36,7 +36,7 @@ services:
         ipv4_address: 172.168.22.3
     depends_on: 
       - nginx
-    restart: on-failure
+    restart: always
 
   
 networks:
